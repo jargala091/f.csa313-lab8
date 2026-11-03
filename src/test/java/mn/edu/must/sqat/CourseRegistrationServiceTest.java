@@ -112,7 +112,7 @@ class CourseRegistrationServiceTest {
     @Test
     void register_nullArgument_throwsIllegalArgumentAndNoInteractions() {
         assertThrows(IllegalArgumentException.class, () -> service.register(null, COURSE_ID));
-        //assertThrows(IllegalArgumentException.class, () -> service.register(STUDENT_ID, null));
+        assertThrows(IllegalArgumentException.class, () -> service.register(STUDENT_ID, null));
 
         verifyNoInteractions(repository, emailSender);
     }
